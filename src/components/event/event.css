@@ -1,0 +1,12 @@
+.event-box {
+	width: 300px;
+	border: 5px solid grey;
+	padding: 20px;
+	margin: 20px;
+}
+
+.event-name {
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 30px;
+}

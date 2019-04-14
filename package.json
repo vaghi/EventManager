@@ -1,0 +1,44 @@
+{
+    "name": "meli-search-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "babel-polyfill": "^6.26.0",
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.5",
+        "eslint": "^5.15.3",
+        "express": "^4.16.4",
+        "json-server": "^0.14.2",
+        "method-override": "^2.3.10",
+        "node-cache": "^4.2.0",
+        "query-string": "^6.4.0",
+        "react": "^16.8.4",
+        "react-dom": "^16.8.4",
+        "react-redux": "^5.1.1",
+        "react-responsive-modal": "^3.6.0",
+        "react-router-dom": "^4.3.1",
+        "react-router-redux": "^4.0.8",
+        "react-scripts": "1.1.4",
+        "react-toastify": "^4.5.2",
+        "redux": "^4.0.1",
+        "redux-thunk": "^2.3.0",
+        "url-parse": "^1.4.4",
+        "webpack": "^4.29.6",
+        "yarn": "^1.13.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vaghi/MeLiSearchApp.git"
+    },
+    "jest": {
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ]
+    }
+}

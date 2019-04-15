@@ -30,6 +30,7 @@ export const handleOpenCreateEvent = (show) => ({ type: types.SHOW_CREATE_EVENT_
 export const handleCreateEvent = (request, events) => (dispatch) => {
     const successCallback = (res) => {
         let copyEvents = [...events, res];
+        sortEventsByDate(copyEvents);
         markUpcomingAndDispatch(copyEvents, dispatch);
         dispatch({ type: types.SHOW_CREATE_EVENT_MODAL, payload: false });
         toaster.success("Event created");
@@ -40,7 +41,6 @@ export const handleCreateEvent = (request, events) => (dispatch) => {
 };
 
 export const handleSubscribeChange = (e, data) => (dispatch) => {
-    console.log(e);
     const successCallback = (res) => {
         const message = res.subscribed === true ? "Subscribed to event" : "Unsubscribed to event";
         dispatch({ type: types.EVENT_UPDATED, payload: res });
@@ -56,9 +56,20 @@ export const handleSubscribeChange = (e, data) => (dispatch) => {
     fetcher.put(url, request, successCallback);
 };
 
+const sortEventsByDate = (events) => {
+    events = events.sort(function(a, b) {
+        if (a.date < b.date) {
+            return -1;
+        }
+        if (a.date > b.date) {
+            return 1;
+        }
+    })
+}
+
 const markUpcomingAndDispatch = (events, dispatch) => {
-    for(let i = 0; i < 5 || i < events.lenght; i++) {
-        events[i].upcoming = true;
+    for(let i = 0; i < events.length; i++) {
+            events[i].upcoming = i < 5;
     }
 
     dispatch({ type: types.GET_ALL_EVENTS, payload: events });

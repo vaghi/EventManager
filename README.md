@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# Event Manager
+
 
 ## Run
 For the frontend, on the root folder run:
@@ -6,13 +7,11 @@ For the frontend, on the root folder run:
 npm start
 ```
 
-For the backend, on .\src\server run:
-```
-node server.js
-```
-
-
 ## TODO
-- Add spinner on request
+- Add style
+- Add reponsiveness
+- Add DatePicker to Date field on Create Event
+- Avoid create events in the past with restrictions over the DatePicker
+- Fix uncontrolled/controlled error on console
+- Fix libraries vulnerabilities
 - Add unit tests
-- Add results quantity option

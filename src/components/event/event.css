@@ -3,10 +3,17 @@
 	border: 5px solid grey;
 	padding: 20px;
 	margin: 20px;
+	position: relative;
 }
 
 .event-name {
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 30px;
+}
+
+.subscribe-checkbox {
+	bottom: 5px;
+	right: 5px;
+	position: absolute;
 }

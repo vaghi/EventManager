@@ -23,6 +23,15 @@ export const dashboardReducer = (state = initialState, action) => {
                 ...state,
                 showCreateEventModal: action.payload
             }
+        case types.EVENT_UPDATED:
+            let events = [...state.events];
+            var foundIndex = events.findIndex(x => x.id === action.payload.id);
+            events[foundIndex] = action.payload;
+
+            return {
+                ...state,
+                events
+            }
         default:
             return state;
     }

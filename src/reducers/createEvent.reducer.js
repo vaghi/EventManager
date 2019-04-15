@@ -3,7 +3,7 @@ import * as types from '../constants/actionTypes/createEventActionTypes';
 const initialState = {
     name: '',
     description: '',
-    categoryId: '',
+    categoryId: 1,
     location: '',
     date: ''
 }
@@ -34,6 +34,10 @@ export const createEventReducer = (state = initialState, action) => {
             return {
                 ...state,
                 date: action.payload
+            }
+        case types.RESET_INITIAL_STATE:
+            return {
+                initialState
             }
         default:
         return state;

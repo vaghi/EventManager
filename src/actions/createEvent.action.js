@@ -9,7 +9,7 @@ export const onChangeNewEventField = (e, field) => (dispatch) => {
             dispatch({ type: types.ON_CHANGE_DESCRIPTION, payload: e.target.value });
             break;
         case "categoryId":
-            const numericValue = parseInt(e.target.value);
+            const numericValue = parseInt(e.target.value, 10);
             dispatch({ type: types.ON_CHANGE_CATEGORY, payload: numericValue });
             break;
         case "location":
@@ -20,5 +20,6 @@ export const onChangeNewEventField = (e, field) => (dispatch) => {
             break;
         default:
     }
+}
 
-};
+export const resetInitialState = () => ({ type: types.RESET_INITIAL_STATE });

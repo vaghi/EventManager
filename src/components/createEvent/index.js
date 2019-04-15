@@ -1,9 +1,10 @@
 import connect from 'react-redux/es/connect/connect';
-import { onChangeNewEventField } from "../../actions/createEvent.action";
+import { onChangeNewEventField, resetInitialState } from "../../actions/createEvent.action";
 import CreateEvent from './createEvent';
 
 const actions = {
-    onChangeNewEventField
+    onChangeNewEventField,
+    resetInitialState
 }
 
 function mapStateToProps(state) {

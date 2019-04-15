@@ -8,7 +8,7 @@ class Event extends PureComponent {
     }
 
 	render() {
-		const { data } = this.props;
+		const { data, onSubscribeChange } = this.props;
 
 		return (
 			<div className='event-box'>
@@ -19,6 +19,12 @@ class Event extends PureComponent {
 				{ data.location }
 				<br/>
 				{ data.date }
+				<input
+		            name="isGoing"
+					className="subscribe-checkbox"
+		            type="checkbox"
+		            checked={data.subscribed}
+		            onChange={(e) => onSubscribeChange(e, data)} />
 			</div>
 		);
 	}

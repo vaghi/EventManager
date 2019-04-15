@@ -4,12 +4,22 @@ import CreateEventField from './createEventField';
 
 class CreateEvent extends PureComponent {
 
+	constructor(props) {
+		super(props);
+		this.handleClose = this.handleClose.bind(this);
+	}
+
+	handleClose() {
+		this.props.resetInitialState();
+		this.props.onClose();
+	}
+
 	render() {
 		const { openModal, onCreateEvent, onClose, onChangeNewEventField, categories,
 			name, description, categoryId, location, date} = this.props;
 
 		return (
-			<Modal open={openModal} onClose={onClose} center>
+			<Modal open={openModal} onClose={this.handleClose} center>
 				<div className="modal-pop-up-header-container">
 					<h2>Create event</h2>
 				</div>

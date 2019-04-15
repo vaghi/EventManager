@@ -6,7 +6,9 @@
       "description": "Monthly catch-up from SCRUM Alliance",
       "location": "Palo Alto - California",
       "date": "2022-02-02",
-      "categoryId": 0
+      "categoryId": 0,
+      "upcoming": true,
+      "subscribed": false
     },
     {
       "id": 1,
@@ -14,7 +16,9 @@
       "description": "Join the whole team for burguers at Dellepiane",
       "location": "Luis Dellepiane 685",
       "date": "2022-05-31",
-      "categoryId": 2
+      "categoryId": 2,
+      "upcoming": true,
+      "subscribed": true
     },
     {
       "id": 2,
@@ -22,7 +26,9 @@
       "description": "Jui jitsu and wrestling",
       "location": "Corrientes 242",
       "date": "2022-05-01",
-      "categoryId": 1
+      "categoryId": 1,
+      "upcoming": true,
+      "subscribed": true
     },
     {
       "id": 3,
@@ -30,7 +36,9 @@
       "description": "Lunch for networking and team building",
       "location": "Root Bar Cafe",
       "date": "2022-06-20",
-      "categoryId": 0
+      "categoryId": 0,
+      "upcoming": true,
+      "subscribed": true
     },
     {
       "id": 4,
@@ -46,7 +54,9 @@
       "description": "Come to help our little friends",
       "location": "La Noria Bridge",
       "date": "2022-08-02",
-      "categoryId": 3
+      "categoryId": 3,
+      "upcoming": true,
+      "subscribed": true
     }
   ],
   "categories": [

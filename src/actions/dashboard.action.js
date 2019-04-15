@@ -1,15 +1,17 @@
 import * as types from '../constants/actionTypes/dashboardActionTypes.js';
 import Fetcher from '../helpers/fetcher';
+import Toaster from '../helpers/toaster';
 
+const toaster = new Toaster();
 const fetcher = new Fetcher();
 
 export const getEvents = (itemId) => (dispatch) => {
 
     const successCallback = (res) => {
-        sortAndDispatch(res, dispatch);
+        markUpcomingAndDispatch(res, dispatch);
     }
 
-    const url = `http://localhost:3000/events/`;
+    const url = `http://localhost:3000/events?_sort=date&_order=asc`;
     fetcher.get(url, successCallback);
 };
 
@@ -28,20 +30,36 @@ export const handleOpenCreateEvent = (show) => ({ type: types.SHOW_CREATE_EVENT_
 export const handleCreateEvent = (request, events) => (dispatch) => {
     const successCallback = (res) => {
         let copyEvents = [...events, res];
-        sortAndDispatch(copyEvents, dispatch);
+        markUpcomingAndDispatch(copyEvents, dispatch);
         dispatch({ type: types.SHOW_CREATE_EVENT_MODAL, payload: false });
+        toaster.success("Event created");
     }
 
     const url = `http://localhost:3000/events/`;
     fetcher.post(url, request, successCallback);
 };
 
-const sortAndDispatch = (events, dispatch) => {
-    let sortedEvents = events.sort((a,b) => a.date < b.date);
-
-    for(let i = 0; i < 5 || i < sortedEvents.lenght; i++) {
-        sortedEvents[i].upcoming = true;
+export const handleSubscribeChange = (e, data) => (dispatch) => {
+    console.log(e);
+    const successCallback = (res) => {
+        const message = res.subscribed === true ? "Subscribed to event" : "Unsubscribed to event";
+        dispatch({ type: types.EVENT_UPDATED, payload: res });
+        toaster.success(message);
     }
 
-    dispatch({ type: types.GET_ALL_EVENTS, payload: sortedEvents });
+    const request = {
+        ...data,
+        subscribed: e.target.checked
+    }
+
+    const url = `http://localhost:3000/events/${data.id}`;
+    fetcher.put(url, request, successCallback);
+};
+
+const markUpcomingAndDispatch = (events, dispatch) => {
+    for(let i = 0; i < 5 || i < events.lenght; i++) {
+        events[i].upcoming = true;
+    }
+
+    dispatch({ type: types.GET_ALL_EVENTS, payload: events });
 };

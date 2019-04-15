@@ -1,12 +1,13 @@
 import connect from 'react-redux/es/connect/connect';
-import { getEvents, getCategories, handleOpenCreateEvent, handleCreateEvent } from "../../actions/dashboard.action";
+import { getEvents, getCategories, handleOpenCreateEvent, handleCreateEvent, handleSubscribeChange } from "../../actions/dashboard.action";
 import Dashboard from './dashboard';
 
 const actions = {
     getEvents,
     getCategories,
     handleOpenCreateEvent,
-    handleCreateEvent
+    handleCreateEvent,
+    handleSubscribeChange,
 }
 
 function mapStateToProps(state) {

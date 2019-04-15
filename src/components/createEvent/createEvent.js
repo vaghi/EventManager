@@ -7,6 +7,7 @@ class CreateEvent extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.handleClose = this.handleClose.bind(this);
+		this.handleCreateEvent = this.handleCreateEvent.bind(this);
 	}
 
 	handleClose() {
@@ -14,8 +15,14 @@ class CreateEvent extends PureComponent {
 		this.props.onClose();
 	}
 
+	handleCreateEvent() {
+		const { onCreateEvent, name, description, categoryId, location, date } = this.props;
+		onCreateEvent({name, description, categoryId, location, date});
+		this.handleClose();
+	}
+
 	render() {
-		const { openModal, onCreateEvent, onClose, onChangeNewEventField, categories,
+		const { openModal, onClose, onChangeNewEventField, categories,
 			name, description, categoryId, location, date} = this.props;
 
 		return (
@@ -28,7 +35,7 @@ class CreateEvent extends PureComponent {
 					<CreateEventField label="Description" onChange={(e) => onChangeNewEventField(e, "description")} value={description}/>
 					<label>Category</label>
 					<br></br>
-					<select onChange={(e) => onChangeNewEventField(e, "categoryId")}>
+					<select onChange={(e) => onChangeNewEventField(e, "categoryId")} value={categoryId}>
 						{categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
 					</select>
 					<CreateEventField label="Location" onChange={(e) => onChangeNewEventField(e, "location")} value={location}/>
@@ -36,7 +43,7 @@ class CreateEvent extends PureComponent {
 				</div>
 				<div className="modal-pop-up-container">
 					<button onClick={onClose}>Cancel</button><button
-						onClick={(e) => onCreateEvent({name, description, categoryId, location, date})}>Ok</button>
+						onClick={this.handleCreateEvent}>Ok</button>
 				</div>
 			</Modal>
 		);

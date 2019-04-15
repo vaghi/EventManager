@@ -32,7 +32,6 @@ export const handleCreateEvent = (request, events) => (dispatch) => {
         let copyEvents = [...events, res];
         sortEventsByDate(copyEvents);
         markUpcomingAndDispatch(copyEvents, dispatch);
-        dispatch({ type: types.SHOW_CREATE_EVENT_MODAL, payload: false });
         toaster.success("Event created");
     }
 
@@ -64,6 +63,8 @@ const sortEventsByDate = (events) => {
         if (a.date > b.date) {
             return 1;
         }
+
+        return 0;
     })
 }
 

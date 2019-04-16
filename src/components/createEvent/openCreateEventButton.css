@@ -2,12 +2,13 @@
   background:#1AAB8A;
   color:#fff;
   border:none;
+  border-radius: 2em;
   position:fixed;
   top: 20px;
   right: 20px;
   height:60px;
-  font-size:1.2em;
-  padding:0 2em;
+  width: 60px;
+  font-size: 2.5em;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;

@@ -32,7 +32,7 @@ export const handleCreateEvent = (request, events) => (dispatch) => {
         let copyEvents = [...events, res];
         sortEventsByDate(copyEvents);
         markUpcomingAndDispatch(copyEvents, dispatch);
-        toaster.success("Event created");
+        toaster.success(`Event ${res.name} created`);
     }
 
     const url = `http://localhost:3000/events/`;
@@ -41,7 +41,7 @@ export const handleCreateEvent = (request, events) => (dispatch) => {
 
 export const handleSubscribeChange = (e, data) => (dispatch) => {
     const successCallback = (res) => {
-        const message = res.subscribed === true ? "Subscribed to event" : "Unsubscribed to event";
+        const message = res.subscribed === true ? `Subscribed to ${data.name}` : `Unsubscribed from ${data.name}`;
         dispatch({ type: types.EVENT_UPDATED, payload: res });
         toaster.success(message);
     }

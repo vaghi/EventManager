@@ -8,7 +8,7 @@ class OpenCreateEventButton extends PureComponent {
 
 		return (
 			<div className='create-event-button'>
-				<button onClick={onClick}>Create event</button>
+				<button onClick={onClick} title="Create event">+</button>
 			</div>
 		);
 	}

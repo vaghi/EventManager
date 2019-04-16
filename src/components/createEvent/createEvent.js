@@ -57,7 +57,7 @@ class CreateEvent extends PureComponent {
 	        return false;
 	    }
 
-	    if(this.isEmptyOrSpaces(date)) {
+	    if(Object.prototype.toString.call(date) !== '[object Date]') {
 	        toaster.warning("Invalid Date");
 	        return false;
 	    }
@@ -70,7 +70,7 @@ class CreateEvent extends PureComponent {
 	}
 
 	render() {
-		const { openModal, onClose, onChangeNewEventField, categories,
+		const { openModal, onChangeNewEventField, categories,
 			name, description, categoryId, location, date} = this.props;
 
 		const today = new Date();

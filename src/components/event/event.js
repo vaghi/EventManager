@@ -12,13 +12,21 @@ class Event extends PureComponent {
 
 		return (
 			<div className='event-box'>
-				<label className="event-name">{ data.name }</label>
+				<div className="event-name-container">
+					<label className="event-name">{ data.name }</label>
+				</div>
 				<br/>
-				{ data.description }
+				<div className="event-label">
+					{ data.description }
+				</div>
 				<br/>
-				{ data.location }
+				<div className="event-label">
+					{ data.location }
+				</div>
 				<br/>
-				{ data.date }
+				<div className="event-label">
+					{ data.date }
+				</div>
 				<input
 		            name="isGoing"
 					className="subscribe-checkbox"

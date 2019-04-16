@@ -16,7 +16,7 @@ export const onChangeNewEventField = (e, field) => (dispatch) => {
             dispatch({ type: types.ON_CHANGE_LOCATION, payload: e.target.value });
             break;
         case "date":
-            dispatch({ type: types.ON_CHANGE_DATE, payload: e.target.value });
+            dispatch({ type: types.ON_CHANGE_DATE, payload: e });
             break;
         default:
     }

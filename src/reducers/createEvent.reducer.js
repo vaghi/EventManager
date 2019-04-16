@@ -1,11 +1,15 @@
 import * as types from '../constants/actionTypes/createEventActionTypes';
 
+const today = new Date();
+let tomorrow = new Date();
+tomorrow.setDate(today.getDate()+1);
+
 const initialState = {
     name: '',
     description: '',
-    categoryId: 1,
+    categoryId: '',
     location: '',
-    date: ''
+    date: ""
 }
 
 export const createEventReducer = (state = initialState, action) => {

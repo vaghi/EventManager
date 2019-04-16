@@ -1,6 +1,26 @@
-.create-event-button {
-	position: fixed;
-	top: 20px;
-	right: 20px;
-	font-size: 20px;
+.create-event-button button {
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:fixed;
+  top: 20px;
+  right: 20px;
+  height:60px;
+  font-size:1.2em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 8px 8px 15px 1px;
+  box-shadow: rgba(0, 0, 0, 0.75) 8px 8px 15px 1px;
+}
+
+.create-event-button button:hover {
+  background:#fff;
+  color:#1AAB8A;
+}
+
+.create-event-button button:hover:before,.create-event-button button:hover:after {
+  width:100%;
+  transition:800ms ease all;
 }

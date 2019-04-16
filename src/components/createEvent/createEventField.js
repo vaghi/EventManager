@@ -3,13 +3,12 @@ import React, { PureComponent } from 'react';
 class CreateEventField extends PureComponent {
 
 	render() {
-		const { label, onChange, value } = this.props;
+		const { label, onChange, value, maxlength } = this.props;
 
 		return (
 			<div>
-				<label>{label}</label>
-				<br></br>
-				<input type="text" onChange={(e) => onChange(e)} value={value}/>
+				<input type="text" name={label} placeholder={label} maxlength={maxlength}
+					onChange={(e) => onChange(e)} value={value}/>
 			</div>
 		);
 	}

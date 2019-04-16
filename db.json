@@ -8,7 +8,7 @@
       "date": "2022-02-02",
       "categoryId": 0,
       "upcoming": true,
-      "subscribed": true
+      "subscribed": false
     },
     {
       "id": 1,
@@ -28,7 +28,7 @@
       "date": "2022-05-01",
       "categoryId": 1,
       "upcoming": true,
-      "subscribed": true
+      "subscribed": false
     },
     {
       "id": 3,
@@ -56,7 +56,7 @@
       "date": "2022-08-02",
       "categoryId": 3,
       "upcoming": true,
-      "subscribed": true
+      "subscribed": false
     }
   ],
   "categories": [
